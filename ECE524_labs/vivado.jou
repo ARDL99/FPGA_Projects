@@ -1,0 +1,95 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Sat Mar 11 20:51:19 2023
+# Process ID: 18142
+# Current directory: /home/angel/ECE524_labs
+# Command line: vivado prj.xpr
+# Log file: /home/angel/ECE524_labs/vivado.log
+# Journal file: /home/angel/ECE524_labs/vivado.jou
+# Running On: angel-HP-ENVY-x360-Convertible-15m-bp0xx, OS: Linux, CPU Frequency: 2900.000 MHz, CPU Physical cores: 2, Host memory: 16643 MB
+#-----------------------------------------------------------
+start_gui
+create_project FA_project /home/angel/ECE524_labs/FA_project -part xc7z010clg400-1
+set_property board_part digilentinc.com:zybo-z7-10:part0:1.1 [current_project]
+close_project
+create_project FA_project /home/angel/ECE524_labs/sp23-e524-lab2-mixed-lang-adder-ARDL99/build/FA_project -part xc7z010clg400-1
+set_property board_part digilentinc.com:zybo-z7-10:part0:1.1 [current_project]
+add_files -norecurse {/home/angel/ECE524_labs/sp23-e524-lab2-mixed-lang-adder-ARDL99/src/full_adder_n_bit.vhd /home/angel/ECE524_labs/sp23-e524-lab2-mixed-lang-adder-ARDL99/src/top_module.v /home/angel/ECE524_labs/sp23-e524-lab2-mixed-lang-adder-ARDL99/src/simple_and.vhd /home/angel/ECE524_labs/sp23-e524-lab2-mixed-lang-adder-ARDL99/src/simple_xor.v /home/angel/ECE524_labs/sp23-e524-lab2-mixed-lang-adder-ARDL99/src/full_adder.v /home/angel/ECE524_labs/sp23-e524-lab2-mixed-lang-adder-ARDL99/src/half_adder.vhd}
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse {/home/angel/ECE524_labs/sp23-e524-lab2-mixed-lang-adder-ARDL99/sim/full_adder_n_bit_tb.vhd /home/angel/ECE524_labs/sp23-e524-lab2-mixed-lang-adder-ARDL99/sim/half_adder_tb.vhd /home/angel/ECE524_labs/sp23-e524-lab2-mixed-lang-adder-ARDL99/sim/top_module_tb.vhd /home/angel/ECE524_labs/sp23-e524-lab2-mixed-lang-adder-ARDL99/sim/full_adder_tb.v}
+update_compile_order -fileset sim_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top top_module_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+source top_module_tb.tcl
+close_sim
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_simulation
+source top_module_tb.tcl
+close_sim
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top full_adder_n_bit [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top full_adder_n_bit_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+source full_adder_n_bit_tb.tcl
+close_sim
+launch_simulation
+source full_adder_n_bit_tb.tcl
+close_sim
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top full_adder_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top full_adder [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+launch_simulation
+source full_adder_tb.tcl
+close_sim
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top half_adder [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top half_adder_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+source half_adder_tb.tcl
+close_sim
